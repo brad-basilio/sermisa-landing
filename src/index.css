@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+}
+
+/* Base resets for a cleaner look */
+html, body {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Sleek Marquee Animations */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee2 {
+  animation: marquee2 30s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes marquee2 {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Base resets */
+body {
+  overflow-x: hidden;
+}
+* {
+  border-radius: 0 !important; /* Force brutalist zero-rounding everywhere per user request */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0C499E;
+}
+
+
+/* === NEW INDUSTRIAL STYLES === */
+
+.bg-tech-pattern {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(rgba(12, 73, 158, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 73, 158, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: -1px -1px;
+}
+
+.bg-blueprint-dark {
+  background-color: #0C499E;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: -1px -1px;
+}
+
+.hover-sharp-shadow {
+  transition: all 0.3s ease;
+}
+.hover-sharp-shadow:hover {
+  box-shadow: 6px 6px 0px 0px #F6A71B;
+  transform: translate(-4px, -4px);
+}
+
+.hover-sharp-shadow-blue {
+  transition: all 0.3s ease;
+}
+.hover-sharp-shadow-blue:hover {
+  box-shadow: 6px 6px 0px 0px #0C499E;
+  transform: translate(-4px, -4px);
+}
+
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
